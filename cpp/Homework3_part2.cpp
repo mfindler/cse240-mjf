@@ -55,7 +55,8 @@ void main()
         cout << (*theatre).toString();
       }
       else {
-        cout <<"\nThe seat at row “ << row << “ and column “ << col << “ is taken.";
+        cout << endl << endl;
+        cout <<"The seat at row “ << row << “ and column “ << col << “ is taken";
       }
     }
     // Read the next patronInfo

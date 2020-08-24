@@ -57,3 +57,26 @@ void main()
         scanf("%d", &col);
 
         // Checking if the row number and column number are valid
+        // (exist in the examination that we created.)
+        if (check_boundaries(row, col, &examination_seating) == 0) {
+            printf("\nrow or column number is not valid.");
+        }
+        else {
+            // Assigning a seat for a student
+            if (assign_student_at(row, col, &examination_seating, &temp_student) == 1) {
+                printf("\nThe seat at row %d and column %d is assigned to the student",row, col);
+                student_to_string(&temp_student);
+                examination_seating_to_string(&examination_seating);
+            }
+            else {
+                printf("\nThe seat at row %d and column %d is taken.", row, col);
+            }
+        }
+
+        // Read the next studentInfo
+        printf ("Please enter a student information or enter \"Q\" to quit.");
+        
+        /*** reading a student's information ***/
+        scanf("%s", student_info);
+    }
+}
